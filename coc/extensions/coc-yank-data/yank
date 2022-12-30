@@ -1,0 +1,1036 @@
+6bc9796d0e903cd2975f1f50093f3e15|file:///home/saichatla/.config/nvim/init.vim|299|53|v|vim
+	*.ts, *.tsx, *.jsx, *.js
+5f0b6ebc4bea10285ba2b8a6ce78b863|file:///home/saichatla/Documents/Projects/Learning/Scrimba/React/Info-Site/index.js|5|34|v|javascript
+	container
+7552cd149af7495ee7d8225974e50f80|file:///home/saichatla/Documents/Projects/Learning/Scrimba/React/Info-Site/index.js|5|58|v|javascript
+	elementId
+ddc9aeb7d57da331864f6876dca2c720|file:///home/saichatla/.config/nvim/init.vim|345|1|v|vim
+	autocmd StdinReadPre * let s:std_in=1
+	autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+e46130f5c05ba129958120a7f5f31a37|file:///home/saichatla/Documents/Projects/Learning/Scrimba/React/Info-Site/src/index.js|6|9|v|javascript
+	<h1> Hi</h1>
+55cfbaec9b594712e98b01bfbeb47147|file:///home/saichatla/Documents/Projects/Learning/Scrimba/React/Info-Site/src/index.js|3|1|v|javascript
+	import Main from "./components/main"
+	import Navbar from "./components/navbar"
+	function Index() {
+	    return (
+	        <div>
+	            <Main />
+	            <Navbar />
+	        </div> 
+	    )
+	        
+	}
+5c831c3f0cf7b072f361d3ef608080dd|file:///home/saichatla/.config/nvim/init.vim|78|1|v|vim
+	 Plug 'hrsh7th/nvim-cmp'
+f999b84d43a1c2deb141972505f953b0|file:///home/saichatla/.config/nvim/init.vim|78|1|v|vim
+	let g:workspace_autocreate = 1
+	nnoremap <leader>s :ToggleWorkspace<CR>
+	let g:workspace_autosave_always = 1
+	let g:workspace_autosave_untrailspaces = 0
+	let g:workspace_autosave_untrailtabs = 0
+099fb995346f31c749f6e40db0f395e3|file:///home/saichatla/Documents/Projects/PersonalProjects/cppGameEngine/DrawTriagle.cpp|2|11|v|cpp
+	header
+1af9350856beef37c7d95a9029f7cda7|file:///home/saichatla/Documents/Projects/PersonalProjects/sLisp/src/main.cpp|1|1|v|cpp
+	#include <iostream>
+	
+	
+	using namespace std;
+	
+	int main(void){
+	    cout << "Hello World";
+	    return 0;
+	}
+a18a2bacb9cea594a9e8be2962ae815c|file:///home/saichatla/Documents/Projects/PersonalProjects/CruxEngine/src/main.cpp|1|1|v|cpp
+	#include <iostream>
+	
+	using namespace std;
+	
+	int main(){
+	    cout << "Helloworld!";
+	    return 0;
+	}
+2322ad3fb1ec868521a50d4d9720b2c7|file:///home/saichatla/Documents/Projects/PersonalProjects/CruxEngine/src/main.cpp|1|1|v|cpp
+	#include <iostream>
+	#include <string.h>
+	#include <SDL2/SDL.h>
+	
+	/*
+	 *
+	 *	Hello World in SDL2.
+	 *
+	 */
+	
+	/* Global Constants */
+	const int SECOND = 1000;
+	
+	// init ... The init function, it calls the SDL init function.
+	int init() {
+		if (SDL_Init(SDL_INIT_EVERYTHING) != 0) {
+			return -1;
+		}
+	
+		return 0;
+	}
+	
+	// draw ... Draw a series of lines to the screen to create a triangle.
+	void draw(SDL_Renderer* Renderer) {	
+		//Set the draw color...
+		SDL_SetRenderDrawColor(Renderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
+		//Clear the screen.
+		SDL_RenderClear(Renderer);
+	
+		//Setting the actual draw color.
+		SDL_SetRenderDrawColor(Renderer, 255, 255, 255, SDL_ALPHA_OPAQUE);
+	
+		//Drawing the lines we want. (-1, 0), (0, 1), (1, 0)
+		SDL_RenderDrawLine(Renderer, 0, 480, 320, 0);
+		SDL_RenderDrawLine(Renderer, 640, 480, 320, 0);
+		SDL_RenderDrawLine(Renderer, 0, 480, 640, 480);
+	
+		//Update the Renderer.
+		SDL_RenderPresent(Renderer);
+	}
+	
+	// createWindowContext ... Creating the window for later use in rendering and stuff.
+	SDL_Window* createWindowContext(std::string title) {
+		//Declaring the variable the return later.
+		SDL_Window* Window = NULL;
+	
+		//Creating the window and passing that reference to the previously declared variable. 
+		Window = SDL_CreateWindow("Hello World!", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 480, SDL_WINDOW_OPENGL);
+	
+		//Returning the newly creted Window context.
+		return Window;
+	}
+	
+	// createRenderContext ... Creating the rendering context so that I can render things to the Window.
+	SDL_Renderer* createRendererContext(SDL_Window* Window) {
+		//Declaring the variable for the Renderer context.
+		SDL_Renderer* Renderer = NULL;
+		
+		//Create the Renderer with the window.
+		Renderer = SDL_CreateRenderer(Window, -1, 0);
+	
+		//Return the Renderer.
+		return Renderer;
+	}
+	
+	using namespace std;
+	// main ... The main function, right now it just calls the initialization of SDL.
+	int main(int argc, char* argv[]) {
+		//Calling the SDL init stuff.
+		init();
+	
+		//Creating the context for SDL2.
+		SDL_Window* Window = createWindowContext("Hello World!");
+	
+		//Creating the rendering context.
+		SDL_Renderer* Renderer = createRendererContext(Window);
+	
+		//Drawing!
+		draw(Renderer);
+	
+		//Adding a delay.
+		SDL_Delay(4 * SECOND);
+	
+		//Just printing out hello world if everything is working properly.
+		cout << "Hello World!" << endl;
+	
+		//Cleaning up everything.
+		SDL_Quit();
+		return 0;
+	}
+7d5f35068eb575e8b55aa4c9e5fa235f|file:///home/saichatla/Documents/Projects/PersonalProjects/CruxEngine/Makefile|3|1|v|make
+	main.o: src/main.cpp 
+		g++ src/main.cpp -o build/main.o -lSDL2
+	clean:
+		rm build/*.o
+	
+	
+2000b1503bca9eee0194a561f56f0651|file:///home/saichatla/Documents/JHU/SU22/EN.605.601.81/CATLAB/catlab/ui/graphical_ui.py|9|29|v|python
+	funcname
+22298524c7fcfe8a3ec73d28304a6a00|file:///home/saichatla/.config/nvim/init.vim|40|2|v|vim
+	Plug 'scrooloose/nerdtree'
+18f75dd5d9308dfd84fac10722a3aae1|file:///home/saichatla/.config/nvim/init.vim|349|1|v|vim
+	nnoremap <leader>n :NERDTreeFocus<CR>
+	nnoremap <C-n> :NERDTree<CR>
+	nnoremap <C-t> :NERDTreeToggle<CR>
+	nnoremap <C-f> :NERDTreeFind<CR>
+	
+	
+c5d7761af4698b89137837d884d52dca|file:///home/saichatla/.config/nvim/init.vim|80|1|v|vim
+	set vicmd=nvim
+	
+	
+4660a43562255ef770695b8728aaa741|file:///home/saichatla/.config/nvim/init.vim|136|1|v|vim
+	nnoremap <C-n> :NERDTree<CR>
+	
+a2df7e48c09d425ae188ff18bc49399f|file:///home/saichatla/.config/nvim/init.vim|137|1|v|vim
+	nnoremap <C-f> :NERDTreeFind<CR>
+	
+	
+9830f132a05a405d732bbd321ed97e4e|file:///home/saichatla/.config/nvim/init.vim|136|1|v|vim
+	nnoremap <F2> :Fern . -drawer<CR>
+	autocmd StdinReadPre * let s:std_in=1
+	autocmd VimEnter * Fern . -drawer | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+	let loaded_netrwPlugin = 1
+	"
+4e82a8f3955a21f32281fd82f3312b3a|file:///home/saichatla/.config/nvim/init.vim|159|19|v|vim
+	> :Fern . -drawer -reveal=% -toggle -width=35<CR><C-w>=
+3b03a92a139d89e203d7ba43e9f82bc7|file:///home/saichatla/.config/nvim/init.vim|40|1|v|vim
+	 Plug 'vifm/vifm.vim'
+	 
+e0b02738280a78c28f602fbe076295d2|file:///home/saichatla/.config/nvim/init.vim|198|1|v|vim
+	let g:nnn#action = {'<leader> st': 'tab split', '<leader> sh': 'split', '<leader> sv': 'vsplit' }
+	
+f3617a13c0b72c7d1ba8e9880d2fda00|file:///home/saichatla/.config/nvim/init.vim|199|11|v|vim
+	-t>': 'tab split',
+647e7d0df0c8cccef5e20af11ec6fb09|file:///home/saichatla/.config/nvim/init.vim|204|1|v|vim
+	autocmd StdinReadPre * let s:std_in=1
+	autocmd VimEnter * if argc() > 0 || exists("s:std_in") | call nnn#explorer() | wincmd p | stopinsert | endif
+	
+	
+bb118c528306a2980ae172185ce96308|file:///home/saichatla/.config/nvim/init.vim|141|1|v|vim
+	"augroup my-fern-hijack
+	"  autocmd!
+	"  autocmd BufEnter * ++nested call s:hijack_directory()
+	"augroup END
+	"
+	"function! s:hijack_directory() abort
+	"  let path = expand('%:p')
+	"  if !isdirectory(path)
+	"    return
+	"  endif
+	"  bwipeout %
+	"  execute printf('Fern %s', fnameescape(path))
+	"endfunction
+	"
+	"" Custom settings and mappings.
+	"let g:fern#disable_default_mappings = 1
+	"
+	"noremap <silent> <C-t> :Fern . -drawer -reveal=% -toggle -width=35<CR><C-w>=
+	"
+	"function! FernInit() abort
+	"  nmap <buffer><expr>
+	"        \ <Plug>(fern-my-open-expand-collapse)
+	"        \ fern#smart#leaf(
+	"        \   "\<Plug>(fern-action-open:select)",
+	"        \   "\<Plug>(fern-action-expand)",
+	"        \   "\<Plug>(fern-action-collapse)",
+	"        \ )
+	"  nmap <buffer> <CR> <Plug>(fern-my-open-expand-collapse)
+	"  nmap <buffer> <2-LeftMouse> <Plug>(fern-my-open-expand-collapse)
+	"  nmap <buffer> n <Plug>(fern-action-new-path)
+	"  nmap <buffer> d <Plug>(fern-action-remove)
+	"  nmap <buffer> m <Plug>(fern-action-move)
+	"  nmap <buffer> M <Plug>(fern-action-rename)
+	"  nmap <buffer> h <Plug>(fern-action-hidden-toggle)
+	"  nmap <buffer> r <Plug>(fern-action-reload)
+	"  nmap <buffer> k <Plug>(fern-action-mark-toggle)
+	"  nmap <buffer> b <Plug>(fern-action-open:split)
+	"  nmap <buffer> v <Plug>(fern-action-open:vsplit)
+	"  nmap <buffer><nowait> p <Plug>(fern-action-leave)
+	"  nmap <buffer><nowait> c  <Plug>(fern-action-enter)
+	"endfunction
+	"
+	"augroup FernGroup
+	"  autocmd!
+	"  autocmd FileType fern call FernInit()
+	"augroup END
+	
+	
+21c84096dc31e7775fbe826f50d809ef|file:///home/saichatla/.config/nvim/init.vim|96|1|v|vim
+	unction ToggleColors()
+	  if (g:colors_name == "onehalfdark")
+	      colorscheme iceberg
+	  elseif (g:colors_name == "iceberg")
+	      colorscheme molokai
+	  elseif (g:colors_name == "molokai")
+	      colorscheme atom-dark 
+	  else
+	      colorscheme onehalfdark 
+	  endi:
+	endfunction
+	
+	
+	nnoremap <F6> :call ToggleColors()<CR>
+	
+	
+9cbf06e49537b310efff8946e57ef9e8|file:///home/saichatla/.config/nvim/init.vim|46|1|v|vim
+	 Plug 'lambdalisue/fern.vim'
+	
+6292ea543bf5d7c0e7a50a5d813a8631|file:///home/saichatla/.config/nvim/init.vim|37|1|v|vim
+	 "Plug 'NLKNguyen/papercolor-theme'
+	 "Plug 'ryanoasis/vim-devicons'
+	 "Plug 'tpope/vim-surround'
+	 "Plug 'majutsushi/tagbar'
+	 "Plug 'honza/vim-snippets'
+	 "Plug 'preservim/nerdcommenter'
+	 "Plug 'alvan/vim-closetag'
+	 "Plug 'pangloss/vim-javascript'    " JavaScript support
+	 "Plug 'leafgarland/typescript-vim' " TypeScript syntax
+	 "Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
+	 "Plug 'mhinz/vim-startify'
+	 "Plug 'mcchrish/nnn.vim'
+	 "Plug 'fatih/vim-go'
+	 "Plug 'tpope/vim-fugitive'
+	 "Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+	 "Plug 'tpope/vim-commentary'
+	 "Plug 'raimondi/delimitmate'
+	 "Plug 'machakann/vim-sandwich'
+	 "Plug 'phaazon/hop.nvim'
+	 "Plug 'nvim-lualine/lualine.nvim'
+	 "Plug 'kyazdani42/nvim-web-devicons' " for file icons
+	 "Plug 'kevinhwang91/nvim-bqf'
+	 "Plug 'kevinhwang91/nvim-hlslens'
+	 "Plug 'skywind3000/asyncrun.vim'
+	 "Plug 'folke/which-key.nvim'
+	 "Plug 'gelguy/wilder.nvim'
+	 "Plug 'roxma/nvim-yarp'
+	 "Plug 'roxma/vim-hug-neovim-rpc'
+	 "Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+	 "Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'}
+	 "Plug 'godlygeek/tabular'
+	 "Plug 'preservim/vim-markdown' 
+	 "Plug 'lervag/vimtex'
+	 "Plug 'karb94/neoscroll.nvim' 
+	 "Plug 'liuchengxu/vista.vim'
+	 "Plug 'sbdchd/neoformat'
+	 Plug 'sainnhe/edge'
+	 "Plug 'simnalamburt/vim-mundo'
+	 "Plug 'cjrh/vim-conda'
+	 "
+1aed20a0e3f142d243a2ba2a7330175e|file:///home/saichatla/Documents/JHU/AU22/Programming_Languages/Assignment_1/Latex/Chatla_Assign1.tex|1|1|v|latex
+	\documentclass[12pt]{article}
+	\usepackage{lingmacros}
+	\usepackage{tree-dvips}
+	\begin{document}
+	
+	\section*{Notes for My Paper}
+	
+	Don't forget to include examples of topicalization.
+	They look like this:
+	
+	{\small
+	\enumsentence{Topicalization from sentential subject:\\ 
+	\shortex{7}{a John$_i$ [a & kltukl & [el & 
+	  {\bf l-}oltoir & er & ngii$_i$ & a Mary]]}
+	{ & {\bf R-}clear & {\sc comp} & 
+	  {\bf IR}.{\sc 3s}-love   & P & him & }
+	{John, (it's) clear that Mary loves (him).}}
+	}
+	
+	\subsection*{How to handle topicalization}
+	
+	I'll just assume a tree structure like (\ex{1}).
+	
+	{\small
+	\enumsentence{Structure of A$'$ Projections:\\ [2ex]
+	\begin{tabular}[t]{cccc}
+	    & \node{i}{CP}\\ [2ex]
+	    \node{ii}{Spec} &   &\node{iii}{C$'$}\\ [2ex]
+	        &\node{iv}{C} & & \node{v}{SAgrP}
+	\end{tabular}
+	\nodeconnect{i}{ii}
+	\nodeconnect{i}{iii}
+	\nodeconnect{iii}{iv}
+	\nodeconnect{iii}{v}
+	}
+	}
+	
+	\subsection*{Mood}
+	
+	Mood changes when there is a topic, as well as when
+	there is WH-movement.  \emph{Irrealis} is the mood when
+	there is a non-subject topic or WH-phrase in Comp.
+	\emph{Realis} is the mood when there is a subject topic
+	or WH-phrase.
+	
+	\
+600b4e48b60b8cd0e6a96ca96347347c|file:///home/saichatla/Documents/JHU/AU22/Programming_Languages/Assignment_1/Latex/Chatla_Assign1.tex|1|1|v|latex
+	% This is a simple sample document.  For more complicated documents take a look in the exercise tab. Note that everything that comes after a % symbol is treated as comment and ignored when the code is compiled.
+	
+	\documentclass{article} % \documentclass{} is the first command in any LaTeX code.  It is used to define what kind of document you are creating such as an article or a book, and begins the document preamble
+	
+	\usepackage{amsmath} % \usepackage is a command that allows you to add functionality to your LaTeX code
+	
+	\title{Simple Sample} % Sets article title
+	\author{My Name} % Sets authors name
+	\date{\today} % Sets date for date compiled
+	
+	% The preamble ends with the command \begin{document}
+	\begin{document} % All begin commands must be paired with an end command somewhere
+	    \maketitle % creates title using information in preamble (title, author, date)
+	    
+	    \section{Hello World!} % creates a section
+	    
+	     \textbf{Hello World!} Today I am learning \LaTeX. %notice how the command will end at the first non-alphabet charecter such as the . after \LaTeX
+	     \LaTeX{} is a great program for writing math. I can write in line math such as $a^2+b^2=c^2$ %$ tells LaTexX to compile as math
+	     . I can also give equations their own space: 
+	    \begin{equation} % Creates an equation environment and is compiled as math
+	    \gamma^2+\theta^2=\omega^2
+	    \end{equation}
+	    If I do not leave any blank lines \LaTeX{} will continue  this text without making it into a new paragraph.  Notice how there was no indentation in the text after equation (1).  
+	    Also notice how even though I hit enter after that sentence and here $\downarrow$
+	     \LaTeX{} formats the sentence without any break.  Also   look  how      it   doesn't     matter          how    many  spaces     I put     between       my    words.
+	    
+	    For a new paragraph I can leave a blank space in my code. 
+	
+	\end{document} % This is the end of the document
+f29a057e57a12ee5ea64b1cf5fbb3c61|file:///home/saichatla/Documents/JHU/AU22/Programming_Languages/Assignment_1/Latex/Chatla_Assign1.tex|1|1|v|latex
+	\documentclass{article}
+	
+	% These are only here for the sake of this tutorial.
+	\usepackage{amsmath}
+	\newcommand{\lt}{\textbackslash{}lt }
+	\newcommand{\lk}{\textbackslash{}lk }
+	\newcommand{\lv}{\textbackslash{}lv }
+	\newcommand{\lc}{\textbackslash{}lc }
+	\renewcommand{\ll}{\textbackslash{}ll }
+	\renewcommand{\le}{\textbackslash{}le }
+	
+	\begin{document}
+	
+	\section{Compiling}
+	
+	Press \ll to start (or stop) compiling the document.
+	This turns on automatic compiling if supported by your compiler, meaning your
+	document will be compiled each time you save.
+	
+	Press \lk to stop the compilation process
+	
+	Press \lc to clear auxiliary files.
+	
+	Hi
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	\section{Forward and Backward Search}
+	
+	Press \lv to forward search. This will open the compiled PDF.
+	
+	Some PDF viewers support the ability to jump to the current location in the PDF.
+	
+	Some also support backward search (jumping from PDF to source).
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	\section{Errors, Warnings and the QuickFix window}
+	
+	VimTeX will populate the QuickFix menu with any errors and warnings it finds in
+	the log file.
+	
+	This is done after (attempting to) compile or pressing \le.
+	
+	\le also closes the QuickFix menu when it is open.
+	
+	\emph{Example.} Let's put some undefined commands here and compile:
+	
+	Moving to the QuickFix window and pressing enter on the error entry moves the
+	cursor to the line containing the error. We can fix the error and continue.
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	\section{Document Overview}
+	
+	Press \lt to show a window with a table of contents for your document.
+	
+	Also shows labels, references and TODOs. 
+	
+	Can be used to jump to sections, labels, references and TODOs.
+	
+	% TODO: Show table of contents.
+	
+	
+	\documentclass[12pt]{exam}
+	\usepackage{amsthm}
+	\usepackage{libertine}
+	\usepackage[utf8]{inputenc}
+	\usepackage[margin=1in]{geometry}
+	\usepackage{amsmath,amssymb}
+	\usepackage{multicol}
+	\usepackage[shortlabels]{enumitem}
+	\usepackage{siunitx}
+	\usepackage{cancel}
+	\usepackage{graphicx}
+	\usepackage{pgfplots}
+	\usepackage{listings}
+	\usepackage{tikz}
+	
+	
+	\pgfplotsset{width=10cm,compat=1.9}
+	\usepgfplotslibrary{external}
+	\tikzexternalize
+	
+	\newcommand{\class}{Course Name Here} % This is the name of the course 
+	\newcommand{\examnum}{Assignment Name Here} % This is the name of the assignment
+	\newcommand{\examdate}{Date Here} % This is the due date
+	\newcommand{\timelimit}{}
+	
+	
+	
+	
+	
+	\begin{document}
+	\pagestyle{plain}
+	\thispagestyle{empty}
+	
+	\noindent
+	\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+	\textbf{\class} & \textbf{Name:} & \textit{Your Name Here}\\ %Your name here instead, obviously 
+	\textbf{\examnum} &&\\
+	\textbf{\examdate} &&\\
+	\end{tabular*}\\
+	\rule[2ex]{\textwidth}{2pt}
+	% ---
+	
+	
+	
+	
+	\begin{enumerate} %You can make lists!
+	
+	\item This is the first item.
+	
+	\item This will make another item. % You can do this for each question.
+	
+	\item Yet another item. 
+	
+	\item Lists within lists! \begin{enumerate}
+	\item ha-HA!
+	\item see?
+	
+	\end{enumerate}
+	
+	
+	\end{enumerate}
+	
+	Look! Math! $f(x)=4x^2 - \frac{3}{4}x +1$ %use the dollar signs to go into math mode
+	
+	
+	\end{document}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	\section{Motions and Text Objects}
+	
+	VimTeX adds various LaTeX specific motions and text objects.
+	
+	\emph{Example motion.} move between section boundaries with [[, [], ][ and ]].
+	
+	\emph{Example text object.} ic refers to a LaTeX command excluding the
+	backslash. ac includes the backslash.
+	
+	cic: \( \alpha \)
+	
+	dac: \(  \)
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	\section{Other Cool Stuff}
+	
+	cse changes the surrounding environment:
+	
+	\begin{equation}
+	  v \cdot \nabla_x f_1 = -\sigma_a f_1, \quad f_1 \rvert_{\Gamma_-} = \phi(x,v).
+	\end{equation}
+	
+	tsd toggles between () and \( \left( \right) \):
+	
+	\begin{equation*}
+	  \frac{d}{ds} \left[ e^{\int_k^s \sigma_a(x + tv)\,dt} F_1(s) \right] = 0
+	\end{equation*}
+	
+	tse toggles the * in environments:
+	
+	\begin{equation}
+	  f_1(x, v) = e^{-\int_0^{\tau_-(x, v)} \sigma_a(x - sv)\,dt} \phi(x_-, v),
+	\end{equation}
+	
+	This is only a tiny sliver of what VimTeX offers.
+	Read the README for an overview, and read :h vimtex for a full description of
+	all things VimTeX.
+	
+	\end{document}
+178a118917861f161e96839f63f2b145|file:///home/saichatla/Documents/JHU/AU22/Programming_Languages/Assignment_1/Latex/Chatla_Assign1.tex|48|7|v|latex
+	This is the first item.
+	
+028d706dffaac2c43356f79abdf342c7|file:///home/saichatla/Documents/JHU/AU22/Programming_Languages/Assignment_1/Latex/Chatla_Assign1.tex|52|7|v|latex
+	This will make another item. % You can do this for each question.
+	
+2bb9b86da08ed908adff246f6f20f0f7|file:///home/saichatla/Documents/JHU/AU22/Programming_Languages/Assignment_1/Latex/Chatla_Assign1.tex|62|1|v|latex
+	Look! Math! $f(x)=4x^2 - \frac{3}{4}x +1$ %use the dollar signs to go into math mode
+	
+	
+59eab4615cf9f98e6a1d0cfe8d319716|file:///home/saichatla/Documents/JHU/AU22/Cryptology/Assignment_1/Latex/Chatla_Assign1.tex|49|29|v|latex
+	Introduction to Computer Vision
+d51cb21b5c3f9bdbc8552496f803058c|file:///home/saichatla/Documents/JHU/AU22/Cryptology/Assignment_1/Latex/Chatla_Assign1.tex|60|3|v|latex
+	Colorado School of Mines
+74d92070767b7116ed210e1c5aef1bcc|file:///home/saichatla/Documents/JHU/AU22/Cryptology/Assignment_1/Latex/Chatla_Assign1.tex|88|1|v|latex
+	\bibliographystyle{plain}
+	\bibliography{sample.bib}
+	
+	
+b78a3223503896721cca1303f776159b|file:///home/saichatla/Documents/JHU/AU22/Cryptology/Assignment_1/Latex/Chatla_Assign1.tex|52|29|v|latex
+	Title
+32c0f350ffa8700dad82cb86ae9838eb|file:///home/saichatla/Documents/JHU/AU22/Cryptology/Assignment_1/Latex/Chatla_Assign1.tex|90|1|v|latex
+	
+	%-------------------------------------------------------------------------------
+	% SNIPPETS
+	%-------------------------------------------------------------------------------
+	
+	%\begin{figure}[!ht]
+	%	\centering
+	%	\includegraphics[width=0.8\textwidth]{file_name}
+	%	\caption{}
+	%	\centering
+	%	\label{label:file_name}
+	%\end{figure}
+	
+	%\begin{figure}[!ht]
+	%	\centering
+	%	\includegraphics[width=0.8\textwidth]{graph}
+	%	\caption{Blood pressure ranges and associated level of hypertension (American Heart Association, 2013).}
+	%	\centering
+	%	\label{label:graph}
+	%\end{figure}
+	
+	%\begin{wrapfigure}{r}{0.30\textwidth}
+	%	\vspace{-40pt}
+	%	\begin{center}
+	%		\includegraphics[width=0.29\textwidth]{file_name}
+	%	\end{center}
+	%	\vspace{-20pt}
+	%	\caption{}
+	%	\label{label:file_name}
+	%\end{wrapfigure}
+	
+	%\begin{wrapfigure}{r}{0.45\textwidth}
+	%	\begin{center}
+	%		\includegraphics[width=0.29\textwidth]{manometer}
+	%	\end{center}
+	%	\caption{Aneroid sphygmomanometer with stethoscope (Medicalexpo, 2012).}
+	%	\label{label:manometer}
+	%\end{wrapfigure}
+	
+	%\begin{table}[!ht]\footnotesize
+	%	\centering
+	%	\begin{tabular}{cccccc}
+	%	\toprule
+	%	\multicolumn{2}{c} {Pearson's correlation test} & \multicolumn{4}{c} {Independent t-test} \\
+	%	\midrule	
+	%	\multicolumn{2}{c} {Gender} & \multicolumn{2}{c} {Activity level} & \multicolumn{2}{c} {Gender} \\
+	%	\midrule
+	%	Males & Females & 1st level & 6th level & Males & Females \\
+	%	\midrule
+	%	\multicolumn{2}{c} {BMI vs. SP} & \multicolumn{2}{c} {Systolic pressure} & \multicolumn{2}{c} {Systolic Pressure} \\
+	%	\multicolumn{2}{c} {BMI vs. DP} & \multicolumn{2}{c} {Diastolic pressure} & \multicolumn{2}{c} {Diastolic pressure} \\
+	%	\multicolumn{2}{c} {BMI vs. MAP} & \multicolumn{2}{c} {MAP} & \multicolumn{2}{c} {MAP} \\
+	%	\multicolumn{2}{c} {W:H ratio vs. SP} & \multicolumn{2}{c} {BMI} & \multicolumn{2}{c} {BMI} \\
+	%	\multicolumn{2}{c} {W:H ratio vs. DP} & \multicolumn{2}{c} {W:H ratio} & \multicolumn{2}{c} {W:H ratio} \\
+	%	\multicolumn{2}{c} {W:H ratio vs. MAP} & \multicolumn{2}{c} {\% Body fat} & \multicolumn{2}{c} {\% Body fat} \\
+	%	\multicolumn{2}{c} {} & \multicolumn{2}{c} {Height} & \multicolumn{2}{c} {Height} \\
+	%	\multicolumn{2}{c} {} & \multicolumn{2}{c} {Weight} & \multicolumn{2}{c} {Weight} \\
+	%	\multicolumn{2}{c} {} & \multicolumn{2}{c} {Heart rate} & \multicolumn{2}{c} {Heart rate} \\
+	%	\bottomrule
+	%	\end{tabular}
+	%	\caption{Parameters that were analysed and related statistical test performed for current study. BMI - body mass index; SP - systolic pressure; DP - diastolic pressure; MAP - mean arterial pressure; W:H ratio - waist to hip ratio.}
+	%	\label{label:tests}
+	%\end{table}
+562505d567faf02dfc9388e81e89d07b|file:///home/saichatla/Documents/JHU/AU22/Cryptology/Assignment_1/Latex/Chatla_Assign1.tex|48|1|v|latex
+	\newpage
+aacd52473bf56661bb44a0623236033a|file:///home/saichatla/Documents/JHU/AU22/Cryptology/Assignment_1/Latex/Chatla_Assign1.tex|61|1|v|latex
+	\maketitle
+	
+d3e45bf6efd82ee60c66ecaf55ad9e67|file:///home/saichatla/Documents/JHU/AU22/Cryptology/Assignment_1/Latex/Chatla_Assign1.tex|73|1|v|latex
+	\section*{Introduction}
+	\subsection*{A subsection}
+	\subsubsection*{A sub-subsection}
+	Here's what a citation looks like!\cite{Smith:2012qr}
+41a536c248e5e6023471d4052e1bb01d|file:///home/saichatla/Documents/JHU/AU22/Cryptology/Assignment_1/Latex/Chatla_Assign1.tex|78|9|v|latex
+	\textbf{Answer: 51}
+	 
+e1d19ed6a0204bb02bd81c03177196d0|file:///home/saichatla/Documents/JHU/AU22/Cryptology/Assignment_1/Latex/Chatla_Assign1.tex|109|1|v|latex
+	\end{enumerate}
+d13bc8625949b03b000341dce9b2070d|file:///home/saichatla/Documents/JHU/AU22/Cryptology/Assignment_1/Latex/Chatla_Assign1.tex|99|12|v|latex
+	 \begin{table}[]
+	                \begin{tabular}{lllllllll}
+	                    x & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
+	                    $\pi(x)$ & 4 & 1 & 6 & 2 & 7 & 3 & 8 & 5
+	                \end{tabular}
+	            \end{table}
+	
+7a132142cbf49efa3e5fcffea8810e18|file:///home/saichatla/Documents/JHU/AU22/Cryptology/Assignment_1/Latex/Chatla_Assign1.tex|99|16|v|latex
+	 \begin{table}[h!]
+	                    \centering
+	                    \begin{tabular}{|l|l|l|l|l|l|l|l|l|}
+	                        \hline
+	                        \multicolumn{1}{|c|}{x} & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\ \hline
+	                                                $\pi(x)$ & 4 & 1 & 6 & 2 & 7 & 3 & 8 & 5 \\ \hline
+	                    \end{tabular}
+	                \end{table}\\
+	
+f8a165afeb62a256a798152e976c6a59|file:///home/saichatla/Documents/JHU/AU22/Cryptology/Assignment_1/Latex/Chatla_Assign1.tex|119|1|v|latex
+	HVZNRUOCNKINKQWSRWBKIIGWPNDODRWGWAZIGZQQGOCBUYVZURSOOVBTCWVJTCOB
+	PIBVBDSNWAWHDAQQDJNQQGJTNDPVWZRFKORDMVGELTCPZLGCHXRLFOLRTNOVLGCH
+	AKIMHIEOYMAWOXYQQGVKIUMNVIZLVYQPOICIFOOHWQSVFQIRJAIFOPGQQIIWVGIV
+	CZVIHDTBCPFTLNBIXLNCWAEIMHPGATGCLTVFZDNBWVJHDGYXIGHBKINKIBAIRBKA
+	OGELTXVQQGOCIFOOHWDCMWJDFJZLDWVMIGIQOVDSJTIDNYOPDMHCKNLTWVJOIVQV
+	BVQSRNCWAVTJAIFHJFELTCOZPSVYQPBJQIVTDBORFAVQVQPWTWOMDTDCDBODTCWK
+	NHVWZBTVFBDNMIORNOCXRFDH 
+8a6cdd508658eea081bb0a9137c9cbf1|file:///home/saichatla/Documents/JHU/AU22/Cryptology/Assignment_1/Latex/Chatla_Assign1.tex|117|40|v|latex
+	Determine the plaintext associated with this Vigenere encrypted ciphertext:
+	
+	                ciphertext
+76567729df154ac7fc27350889118ee1|file:///home/saichatla/.config/nvim/init.vim|74|2|v|vim
+	Plug 'cjrh/vim-conda'
+	 P
+196dbe881a2f2011e598cad80970f036|file:///home/saichatla/Documents/JHU/AU22/Computer_Architecture/Assignment_1/9.cpp|7|1|v|cpp
+	    //declare a string variable
+	
+	    string greeting;
+	    greeting = "Hello";
+	    //the `=` is the assignment operator,assigning the value to the variable
+	
+	
+3ba90dd3e20a9932c8cb840124ba8535|file:///home/saichatla/Documents/JHU/AU22/Computer_Architecture/Assignment_1/9.cpp|17|12|v|cpp
+	const char *__restrict format, ...
+fc9c4bbb804eb113f4217d5012f55a27|file:///home/saichatla/Documents/JHU/AU22/Computer_Architecture/Assignment_1/Assignmnet_1.py|5|1|v|python
+	def problem_thirteen(s: str)->None:
+	    res = ''
+	    for char in s:
+	        res += chr(ord(char) | 0x20)
+	    print(res)
+	
+	
+04b1e8a9dc69bd856c08c9b65f67289c|file:///home/saichatla/Documents/JHU/AU22/Computer_Architecture/Assignment_1/Assignmnet_1.py|20|1|v|python
+	    problem_thirteen('helworldkshdssfsfsf')
+	
+	
+dfcd10e584297b1fea6c80a31da416c4|file:///home/saichatla/Documents/JHU/AU22/Computer_Architecture/Assignment_1/Assignmnet_1.py|14|15|v|python
+	 chr(ord(char) & 0xDF)
+	
+4a782b720c3f463b089c8e66e98496a9|file:///home/saichatla/Documents/JHU/AU22/Computer_Architecture/Assignment_1/Assignmnet_1.py|21|4|v|python
+	 print("This is the original value: " + s + " with type: " type(s))
+	
+	
+d2456af19c199692323922426649d052|file:///home/saichatla/Documents/JHU/AU22/Computer_Architecture/Assignment_1/Assignmnet_1.py|16|1|v|python
+	    print("Problem 14:")
+	    print("This is the original string: " + s)
+	    print("This is the uppercase converted string: " + res)
+	
+	
+c09585df3c4f7b764874dab21eeccd0b|file:///home/saichatla/Documents/JHU/AU22/Computer_Architecture/Assignment_1/Assignmnet_1.py|2|1|v|python
+	    '''
+	    Returns the sum of two decimal numbers in binary digits.
+	
+	            Parameters:
+	                    val (int): A decimal integer
+	
+	            Returns:
+	                    None
+	    '''
+	 
+c305168941aa5599fc4c72144a8c5712|file:///home/saichatla/Documents/JHU/AU22/Computer_Architecture/Assignment_1/Assignmnet_1.py|19|4|v|python
+	 '''
+	    Takes a string and converts it to lowercase using bitwise operations.
+	
+	            Parameters:
+	                    s (str): A string of characters
+	
+	            Returns:
+	                    None
+	    '''
+	    
+8a5664acd4838e81e719eff4278b0fe8|file:///home/saichatla/Documents/JHU/AU22/Cryptology/Assignment_2/Latex/Chatla_Assign2.tex|125|1|v|latex
+	    \newpage
+	\item Exercise 4. Determine the plaintext associated with this Vigenere encrypted ciphertext: \\
+	
+	    HVZNRUOCNKINKQWSRWBKIIGWPNDODRWG\\
+	    WAZIGZQQGOCBUYVZURSOOVBTCWVJTCOB\\
+	    PIBVBDSNWAWHDAQQDJNQQGJTNDPVWZRF\\
+	    KORDMVGELTCPZLGCHXRLFOLRTNOVLGCH\\
+	    AKIMHIEOYMAWOXYQQGVKIUMNVIZLVYQP\\
+	    OICIFOOHWQSVFQIRJAIFOPGQQIIWVGIV\\
+	    CZVIHDTBCPFTLNBIXLNCWAEIMHPGATGC\\
+	    LTVFZDNBWVJHDGYXIGHBKINKIBAIRBKA\\
+	    OGELTXVQQGOCIFOOHWDCMWJDFJZLDWVM\\
+	    IGIQOVDSJTIDNYOPDMHCKNLTWVJOIVQVB\\
+	    VQSRNCWAVTJAIFHJFELTCOZPSVYQPBJQI\\
+	    VTDBORFAVQVQPWTWOMDTDCDBODTCWKNHV\\
+	    WZBTVFBDNMIORNOCXRFDH \\
+	    \textbf{Answer: The key is "avoid" and The plaintext is "half out of his wits within so mniavowl is willing to try
+	    almost anything that might assist him in dozing off a pair of pa jam as with bright polkadotsa
+	nightshirt a body stocking a warm shawl a kimono a cotton sar i from a cousin in india or simply
+	curling up in his birthday suit arranging his quilt this way and thats witching to a cot to a crib a
+	fold away a divan as of a and a hammock lying on his back on his stomach or with arms akimbo casting
+	off his quilt or placing a thick hairy tartan ruccaa aaa".}
+73a613d843ff14e6fe8d9434ba74890c|file:///home/saichatla/Documents/JHU/AU22/Cryptology/Assignment_2/Latex/Chatla_Assign2.tex|75|1|v|latex
+	    \begin{enumerate}
+	        \item 7503 mod 81 \\
+	        Computation: 7503 = (81 * 92) + 51 \\
+	        \textbf{Answer: 51}
+	        \item (-7503) mod 81 \\
+	        Computation: -7503 = (81 * -93) + 30 \\
+	        \textbf{Answer: 30} 
+	        \item 81 mod 7503 \\
+	        Computation: 81 = (7503 * 0) + 81 \\
+	        \textbf{Answer: 81} \\
+	        \item (-81) mod 7503 \\
+	        Computation: -81 = (7503*-1) + 7422 \\
+	        \textbf{Answer: 7422}
+	    \end{enumerate}
+	
+8275b3849165931e21ec8dcf6204c9f0|file:///home/saichatla/Documents/JHU/AU22/Cryptology/Assignment_2/Latex/Chatla_Assign2.tex|86|29|v|latex
+	$K_{000}$
+d284547357a89a859766d2fbd5f33de0|file:///home/saichatla/Documents/JHU/AU22/Cryptology/Assignment_2/Latex/Chatla_Assign2.tex|87|29|v|latex
+	$K_{001}$
+3069e0838da1fc00967ea1fde558c389|file:///home/saichatla/Documents/JHU/AU22/Cryptology/Assignment_2/Latex/Chatla_Assign2.tex|99|1|v|latex
+	          encrypted using a Shift Cipher: \\
+	          BEEAKFYDJXUQYHYJIQRYHTYJIQFBQDUYJIIKFUHCQD. \\
+	    \textbf{Answer: K = 16 and the plaintext is "Look up in the air its a bird its a plane
+	    its superman".}
+	    \newpage
+	    \item 2.16.
+	        \begin{enumerate}
+	            \item Suppose that $\pi$ is the following permutation of $\{1,...,8\}$:
+	                \begin{table}[h!]
+	                    \centering
+	                    \begin{tabular}{|l|l|l|l|l|l|l|l|l|}
+	                        \hline
+	                        \multicolumn{1}{|c|}{x} & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\ \hline
+	                                                $\pi(x)$ & 4 & 1 & 6 & 2 & 7 & 3 & 8 & 5 \\ \hline
+	                    \end{tabular}
+	                \end{table}\\
+	                Compute the permutation $\pi^{-1}$ \\
+	            \textbf{Answer:} \\
+	            \begin{table}[h!]
+	                    \centering
+	                    \begin{tabular}{|l|l|l|l|l|l|l|l|l|}
+	                        \hline
+	                        \multicolumn{1}{|c|}{x} & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\ \hline
+	                        $\pi^{-1}(x)$ & 2 & 4 & 6 & 1 & 8 & 3 & 5 & 7 \\ \hline
+	                    \end{tabular}
+	            \end{table}\\
+	            \item Decrypt the following, for a Permutation Cipher with m = 8,
+	                which was encrypted using the key $\pi$: \\
+	                  TGEEMNELNNTDROEOAAHDOETCSHAEIRLM. \\
+	            \textbf{Answer: The plaintext is "Gentlemen do not read each others mail".}
+	
+	
+	
+	        \end{enumerate}
+	    \newpage
+	\item Exercise 4. Determine the plaintext associated with this Vigenere encrypted ciphertext: \\
+	
+	    HVZNRUOCNKINKQWSRWBKIIGWPNDODRWG\\
+	    WAZIGZQQGOCBUYVZURSOOVBTCWVJTCOB\\
+	    PIBVBDSNWAWHDAQQDJNQQGJTNDPVWZRF\\
+	    KORDMVGELTCPZLGCHXRLFOLRTNOVLGCH\\
+	    AKIMHIEOYMAWOXYQQGVKIUMNVIZLVYQP\\
+	    OICIFOOHWQSVFQIRJAIFOPGQQIIWVGIV\\
+	    CZVIHDTBCPFTLNBIXLNCWAEIMHPGATGC\\
+	    LTVFZDNBWVJHDGYXIGHBKINKIBAIRBKA\\
+	    OGELTXVQQGOCIFOOHWDCMWJDFJZLDWVM\\
+	    IGIQOVDSJTIDNYOPDMHCKNLTWVJOIVQVB\\
+	    VQSRNCWAVTJAIFHJFELTCOZPSVYQPBJQI\\
+	    VTDBORFAVQVQPWTWOMDTDCDBODTCWKNHV\\
+	    WZBTVFBDNMIORNOCXRFDH \\
+	    \textbf{Answer: The key is "avoid" and The plaintext is "half out of his wits within so mniavowl is willing to try
+	    almost anything that might assist him in dozing off a pair of pa jam as with bright polkadotsa
+	nightshirt a body stocking a warm shawl a kimono a cotton sar i from a cousin in india or simply
+	curling up in his birthday suit arranging his quilt this way and thats witching to a cot to a crib a
+	fold away a divan as of a and a hammock lying on his back on his stomach or with arms akimbo casting
+	off his quilt or placing a thick hairy tartan ruccaa aaa".}
+4e9e67327d192e21adddd3dcab2d7315|file:///home/saichatla/Documents/JHU/AU22/Cryptology/Assignment_2/Latex/Chatla_Assign2.tex|98|12|v|latex
+	Consider a cryptosystem in which $\Phi = \{a,b,c\}, \Kappa = \{K_1, K_2, K_3 \} and \Chi
+	    = \{1,2,3,4\}. Suppose the encryption matrix is as follows:$
+	
+fdc86ddc3107c44ce20e000ea3bcacdc|file:///home/saichatla/Documents/JHU/AU22/Cryptology/Assignment_2/Latex/Chatla_Assign2.tex|102|11|v|latex
+	\frac{1}{2}\log_22
+85331fe44e168fffa69408d16913d86b|file:///home/saichatla/Documents/JHU/AU22/Cryptology/Assignment_3/Latex/Chatla_Assign3.tex|73|18|v|latex
+	
+	    \item 3.9
+	        \begin{enumerate}
+	            \item Construct the encryption matrix (as defined in Example 3.3) for the One-time Pad
+	                with $n=3$. \\
+	                \textbf{Answer:}\\
+	                
+	
+	                    \begin{table}[h!]
+	                    \centering
+	                    \begin{tabular}{lllllllll}
+	                    \hline
+	                    \multicolumn{1}{c}{} & \textbf{000} & \textbf{001} & \textbf{010} & \textbf{011} & \textbf{100} & \textbf{101} & \textbf{110} & \textbf{111} \\ \hline
+	                    \textbf{$K_{000}$} & 000 & 001 & 010 & 011  & 100  & 101 & 110 & 111 \\ \hline
+	                    \textbf{$K_{001}$} & 001 & 000 & 011 & 010  & 101  & 100 & 111 & 110 \\ \hline
+	                    \textbf{$K_{010}$} & 010 & 011 & 000 & 001  & 110  & 111 & 100 & 101 \\ \hline
+	                    \textbf{$K_{011}$} & 011 & 010 & 001 & 000  & 111  & 110 & 101 & 100 \\ \hline
+	                    \textbf{$K_{100}$} & 100 & 101 & 110 & 111  & 000  & 001 & 010 & 011 \\ \hline
+	                    \textbf{$K_{101}$} & 101 & 100 & 111 & 110  & 001  & 000 & 011 & 010 \\ \hline
+	                    \textbf{$K_{110}$} & 110 & 111 & 100 & 101  & 010  & 011 & 000 & 001 \\ \hline
+	                    \textbf{$K_{111}$} & 111 & 110 & 101 & 100  & 011  & 010 & 001 & 000 \\ \hline
+	                    \end{tabular}
+	                    \end{table}
+	        \end{enumerate}
+	    \newpage
+	\item 3.15. Compute $H(P)$, $H(C)$, $H(K)$, $H(K|C)$, and $H(P|C)$\\
+	    \textbf{Note:} I was super confused by the directions of the problem even when I looked at page 65-66.
+	    So I just ended up calculating the entropy values. I should have started earlier and asked
+	    questions but my grandmother died last wednesday, so I didn't have time.
+	    \textbf{Computation:}
+	
+	    $H(K) = 3*\frac{1}{3} \log_23 = 1.58496$ \\
+	    $H(P) = \frac{1}{2}\log_22 + \frac{1}{3}\log_23+\frac{1}{6}\log_26=1.45915$ \\
+	    $H(C) = 1.955$ \\
+	    $H(K|C) = H{K} + H(P) - H(C) = 1.089$ \\
+	    $H(P|1) = .8113, H(P|2) = .9710, H(P|3) = 1.459, H(P|4)=.9183$ \\
+	    $H(P|C) = 1.062$ \\
+	    
+	    \textbf{Answer:}\\
+	    $H(K) = 1.58496$\\
+	    $H(P) = 1.45915$\\
+	    $H(C) = 1.955$\\
+	    $H(K|C) = 1.089$\\
+	    $H(P|C) = 1.062$\\
+	\newpage
+	\item  Exercise 3. Compare and contrast the Vigenere Cipher and the character-based One-Time Pad.
+	    How are they alike; how do they differ? \\
+	    \textbf{Answer:} \\
+	    The Vigenere Cipher is non-monoalphabetic cryptosystem where each character that is going to get
+	    encoded the shift is determined by the keyword. The One-Time Pad is a similar that each
+	    character is encoded by pad/keyword. The difference in these two is that Vigenere Cipher
+	    converts each character from 1 to 26 and same for the keyword and adds them together to module
+	    them by 26. The One-Time Pad converts all the characters to binary including the pad and XORs
+	    the the text with the pad. Therefore, the Vigenere Cipher can be thought of as a character based One
+	    Time Pad, while the normal One-Time Pad is bit based.
+9160946f8757a0bd5601394b1d7b1dac|file:///home/saichatla/Documents/JHU/AU22/Cryptology/Assignment_3/Latex/Chatla_Assign3.tex|78|1|v|latex
+	        \begin{thebibliography}{9}
+	        \bibitem{texbook}
+	        Donald E. Knuth (1986) \emph{The \TeX{} Book}, Addison-Wesley Professional.
+	
+	        \bibitem{lamport94}
+	        Leslie Lamport (1994) \emph{\LaTeX: a document preparation system}, Addison
+	        Wesley, Massachusetts, 2nd ed.
+	        \end{thebibliography}
+632d06251992542d2ad39d7104099b1a|file:///home/saichatla/Documents/JHU/AU22/Cryptology/Assignment_3/Latex/Chatla_Assign3.tex|79|22|v|latex
+	There are a few similarities and differences between DES and AES.
+e44ddf31983ab625bc978a1984a793f0|file:///home/saichatla/Documents/JHU/AU22/Cryptology/Assignment_3/Latex/Chatla_Assign3.tex|76|51|v|latex
+	0000 0001 
+02b0a88cc8ffc7e1cdee2f33eaa628b4|file:///home/saichatla/Documents/JHU/AU22/Cryptology/Assignment_3/Latex/Chatla_Assign3.tex|76|61|v|latex
+	0000 0001
+e9ed42e1bea287b51f3b4575fc3603af|file:///home/saichatla/Documents/JHU/AU22/Cryptology/Assignment_3/Latex/Chatla_Assign3.tex|79|7|v|latex
+	      IP: \\
+	            00000000 \\
+	            00000000 \\
+	            00000000 \\
+	            11111111 \\
+	            00000000 \\
+	            00000000 \\
+	            00000000 \\
+	            00000000 \\
+	
+7ddd5852df719ce8d81224b6d919d6ca|file:///home/saichatla/Documents/JHU/AU22/Cryptology/Assignment_3/Latex/Chatla_Assign3.tex|82|27|v|latex
+	 00000000 00000000 00000000 00000000 00000000 00000000
+56a68c9de8e3df1d17075d1352debbe7|file:///home/saichatla/Documents/JHU/AU22/Cryptology/Assignment_3/Latex/Chatla_Assign3.tex|90|17|v|latex
+	)
+	    \newpage
+	
+6661e15fa33e00c8b32f2eb5ac402ac1|file:///home/saichatla/Documents/JHU/AU22/Quantum_Computation/Assignmment_1/Chatla_Assign3.tex|92|1|v|latex
+	\item[3.] \textbf{Example 3. Compare and contrast the DES and the AES encryption algorithms.} \\
+	    \textbf{Answer:} AES and DES are both symmetric-key block ciphers. The key length of DES is 56
+	     bits, while AES key length can be 128, 192, or 256 bits. AES can encrpt 128 bits of plaintext
+	     while DES can encrypt 64 bits of plaintext. The number of rounds in AES is 10, 12 or 14 rounds,
+	     while DES has 16 rounds. AES is based on subsitiution-permutation network, while the structure
+	    of DES is based on Feistel network. The AES rounds consist of byte subsitution, shift row, mix
+	    column and key additon, while the rounds in DES consist of expansion, XOR operation with key
+	    round and subsitution-permutation. Also, DES the data block is divided into two while in AES the
+	    entire block is processed as a singular matrix.\\ 
+	    \textbf{References}
+	    \begin{enumerate}
+	        \item[1.] https://www.geeksforgeeks.org/difference-between-aes-and-des-ciphers/
+	        \item[2.] https://techdifferences.com/difference-between-des-and-aes.html
+	    \end{enumerate}
+	    \newpage
+	\item[4.] \textbf{Example 4. Do Exercise 4.10 on page 133.} \\
+	\textbf{Answer:} In ECB or OFB modes the only input that corresponds to the ciphertext blocks is the
+	plaintext block, thus it is apparent number of plaintext blocks that will be decrypted incorrectly
+	is 1. In CBC mode, each block of plaintext is XORed with the previous ciphertext block, thus there
+	will be two incorrectly decrypted plaintext blocks. Similarly in CFB mode, a keystream element is
+	produced by encryting the previous cipherblock. Thus, there wil be two incorrectly decrypted
+	plaintext blocks aswell.
+	
+	
+08fd25571a4ea6c24e09fced62aacebc|file:///home/saichatla/Documents/JHU/AU22/Quantum_Computation/Assignmment_1/Chatla_Assign3.tex|75|1|v|latex
+	            \textbf{K[0] =  0101010101010101}\\
+	            \textbf{Computation: }\\ 
+	            Hex to Binary: 00000001 00000001 00000001 00000001 00000001
+	            00000001 00000001 00000001\\
+	      
+	            The 8th, 16th, 24th, 32nd, 40th, 48th, 56th, and 64th bit are removed. \\
+	
+	            Thus, 00000000 00000000 00000000 00000000 00000000 00000000 00000000 \\
+	            Since, every value is 0 that means any amount of shifting will not do anything\\
+	            \textbf{Answer:} Thus we get a 48 bit key.\\
+	            Binary:  00000000 00000000 00000000 00000000 00000000 00000000 \\
+	            Hex: 0000 0000 0000\\
+	 
+7eea8eb12cdde1ed03f9ab90639e5e18|file:///home/saichatla/Documents/JHU/AU22/Quantum_Computation/Assignmment_1/Chatla_Assign3.tex|77|1|v|latex
+	          \textbf{K[0] = 00000000000000000000000000000000.} \\
+	          \textbf{Answer:} Hex: 00000000000000000000000000000000 \\
+	 
+81c3ef87f2dd7f38a3bf75460fae9d5e|file:///home/saichatla/Documents/JHU/AU22/Quantum_Computation/Assignmment_1/Chatla_Assign3.tex|77|1|v|latex
+	            \begin{align}
+	                $|\phi>$$ &= $\frac{1}{\sqrt{7}}$\begin{bmatrix}
+	                   $i+i$  \\
+	                    $i-2i$ \\
+	            \end{bmatrix}
+	            \end{align}
+	
+	
