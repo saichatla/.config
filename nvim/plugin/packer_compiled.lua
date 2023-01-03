@@ -149,10 +149,13 @@ _G.packer_plugins = {
     path = "/home/saichatla/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
-  ["lush.nvim"] = {
-    loaded = true,
-    path = "/home/saichatla/.local/share/nvim/site/pack/packer/start/lush.nvim",
-    url = "https://github.com/rktjmp/lush.nvim"
+  ["markdown-preview.nvim"] = {
+    commands = { "MarkdownPreview" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/saichatla/.local/share/nvim/site/pack/packer/opt/markdown-preview.nvim",
+    url = "https://github.com/iamcco/markdown-preview.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
@@ -163,11 +166,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/saichatla/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
-  },
-  ["material.nvim"] = {
-    loaded = true,
-    path = "/home/saichatla/.local/share/nvim/site/pack/packer/start/material.nvim",
-    url = "https://github.com/marko-cerovac/material.nvim"
   },
   ["nightfox.nvim"] = {
     loaded = true,
@@ -188,6 +186,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/saichatla/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-dap"] = {
+    loaded = true,
+    path = "/home/saichatla/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    url = "https://github.com/mfussenegger/nvim-dap"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -230,6 +233,11 @@ _G.packer_plugins = {
     path = "/home/saichatla/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
+  ["plantuml-syntax"] = {
+    loaded = true,
+    path = "/home/saichatla/.local/share/nvim/site/pack/packer/start/plantuml-syntax",
+    url = "https://github.com/aklt/plantuml-syntax"
+  },
   ["plenary.nvim"] = {
     loaded = true,
     path = "/home/saichatla/.local/share/nvim/site/pack/packer/start/plenary.nvim",
@@ -265,6 +273,11 @@ _G.packer_plugins = {
     path = "/home/saichatla/.local/share/nvim/site/pack/packer/start/vim-bbye",
     url = "https://github.com/moll/vim-bbye"
   },
+  ["vim-diagram"] = {
+    loaded = true,
+    path = "/home/saichatla/.local/share/nvim/site/pack/packer/start/vim-diagram",
+    url = "https://github.com/zhaozg/vim-diagram"
+  },
   ["vim-gutentags"] = {
     loaded = true,
     path = "/home/saichatla/.local/share/nvim/site/pack/packer/start/vim-gutentags",
@@ -284,16 +297,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/saichatla/.local/share/nvim/site/pack/packer/start/which-key.nvim",
     url = "https://github.com/folke/which-key.nvim"
-  },
-  ["zenbones.nvim"] = {
-    loaded = true,
-    path = "/home/saichatla/.local/share/nvim/site/pack/packer/start/zenbones.nvim",
-    url = "https://github.com/mcchrish/zenbones.nvim"
-  },
-  ["zephyr-nvim"] = {
-    loaded = true,
-    path = "/home/saichatla/.local/share/nvim/site/pack/packer/start/zephyr-nvim",
-    url = "https://github.com/glepnir/zephyr-nvim"
   }
 }
 
@@ -302,6 +305,19 @@ time([[Defining packer_plugins]], false)
 time([[Config for orgmode]], true)
 try_loadstring("\27LJ\2\nÅ\2\0\0\5\0\f\0\0246\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\3\0B\0\1\0016\0\0\0'\2\4\0B\0\2\0029\0\2\0005\2\b\0005\3\5\0005\4\6\0=\4\a\3=\3\t\0025\3\n\0=\3\v\2B\0\2\1K\0\1\0\21ensure_installed\1\2\0\0\borg\14highlight\1\0\0&additional_vim_regex_highlighting\1\2\0\0\borg\1\0\1\venable\2\28nvim-treesitter.configs\21setup_ts_grammar\nsetup\forgmode\frequire\0", "config", "orgmode")
 time([[Config for orgmode]], false)
+
+-- Command lazy-loads
+time([[Defining lazy-load commands]], true)
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file MarkdownPreview lua require("packer.load")({'markdown-preview.nvim'}, { cmd = "MarkdownPreview", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+time([[Defining lazy-load commands]], false)
+
+vim.cmd [[augroup packer_load_aucmds]]
+vim.cmd [[au!]]
+  -- Filetype lazy-loads
+time([[Defining lazy-load filetype autocommands]], true)
+vim.cmd [[au FileType markdown ++once lua require("packer.load")({'markdown-preview.nvim'}, { ft = "markdown" }, _G.packer_plugins)]]
+time([[Defining lazy-load filetype autocommands]], false)
+vim.cmd("augroup END")
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
