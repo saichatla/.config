@@ -58,30 +58,15 @@ return packer.startup(function(use)
     use { "folke/which-key.nvim" }
     use { "lervag/vimtex" }
     use { "ludovicchabant/vim-gutentags" }
-    use {'nvim-orgmode/orgmode', config = function()
-        require('orgmode').setup{}
-        require('orgmode').setup_ts_grammar()
-
-        -- Treesitter configuration
-        require('nvim-treesitter.configs').setup {
-          -- If TS highlights are not enabled at all, or disabled via `disable` prop,
-          -- highlighting will fallback to default Vim syntax highlighting
-          highlight = {
-            enable = true,
-            -- Required for spellcheck, some LaTex highlights and
-            -- code block highlights that do not have ts grammar
-            additional_vim_regex_highlighting = {'org'},
-          },
-          ensure_installed = {'org'}, -- Or run :TSUpdate org
-        }
-    end
-    }
+    
     -- Colorschemes
     use { "folke/tokyonight.nvim", commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764" }
     use { "lunarvim/darkplus.nvim", commit = "13ef9daad28d3cf6c5e793acfc16ddbf456e1c83" }
     use { "olimorris/onedarkpro.nvim"}
     use { "EdenEast/nightfox.nvim" }
     use { "sainnhe/sonokai" }
+    use { "bluz71/vim-nightfly-colors" }
+    use { "bluz71/vim-moonfly-colors" }
 
     --Note/Text Editing
 use { "iamcco/markdown-preview.nvim", run = function() vim.fn["mkdp#util#install"]() end, ft = "markdown", cmd = { "MarkdownPreview" }, requires = { "zhaozg/vim-diagram", "aklt/plantuml-syntax" }, }
@@ -95,6 +80,7 @@ use { "iamcco/markdown-preview.nvim", run = function() vim.fn["mkdp#util#install
     use { "saadparwaiz1/cmp_luasnip", commit = "a9de941bcbda508d0a45d28ae366bb3f08db2e36" } -- snippet completions
     use { "hrsh7th/cmp-nvim-lsp", commit = "3cf38d9c957e95c397b66f91967758b31be4abe6" }
     use { "hrsh7th/cmp-nvim-lua", commit = "d276254e7198ab7d00f117e88e223b4bd8c02d21" }
+use {'bluz71/vim-nightfly-colors'}
 
     -- Snippets
     use { "L3MON4D3/LuaSnip", commit = "8f8d493e7836f2697df878ef9c128337cbf2bb84" } --snippet engine

@@ -222,12 +222,6 @@ _G.packer_plugins = {
     path = "/home/saichatla/.local/share/nvim/site/pack/packer/start/onedarkpro.nvim",
     url = "https://github.com/olimorris/onedarkpro.nvim"
   },
-  orgmode = {
-    config = { "\27LJ\2\nÅ\2\0\0\5\0\f\0\0246\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\3\0B\0\1\0016\0\0\0'\2\4\0B\0\2\0029\0\2\0005\2\b\0005\3\5\0005\4\6\0=\4\a\3=\3\t\0025\3\n\0=\3\v\2B\0\2\1K\0\1\0\21ensure_installed\1\2\0\0\borg\14highlight\1\0\0&additional_vim_regex_highlighting\1\2\0\0\borg\1\0\1\venable\2\28nvim-treesitter.configs\21setup_ts_grammar\nsetup\forgmode\frequire\0" },
-    loaded = true,
-    path = "/home/saichatla/.local/share/nvim/site/pack/packer/start/orgmode",
-    url = "https://github.com/nvim-orgmode/orgmode"
-  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/saichatla/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -288,6 +282,11 @@ _G.packer_plugins = {
     path = "/home/saichatla/.local/share/nvim/site/pack/packer/start/vim-illuminate",
     url = "https://github.com/RRethy/vim-illuminate"
   },
+  ["vim-nightfly-colors"] = {
+    loaded = true,
+    path = "/home/saichatla/.local/share/nvim/site/pack/packer/start/vim-nightfly-colors",
+    url = "https://github.com/bluz71/vim-nightfly-colors"
+  },
   vimtex = {
     loaded = true,
     path = "/home/saichatla/.local/share/nvim/site/pack/packer/start/vimtex",
@@ -301,10 +300,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: orgmode
-time([[Config for orgmode]], true)
-try_loadstring("\27LJ\2\nÅ\2\0\0\5\0\f\0\0246\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\0016\0\0\0'\2\1\0B\0\2\0029\0\3\0B\0\1\0016\0\0\0'\2\4\0B\0\2\0029\0\2\0005\2\b\0005\3\5\0005\4\6\0=\4\a\3=\3\t\0025\3\n\0=\3\v\2B\0\2\1K\0\1\0\21ensure_installed\1\2\0\0\borg\14highlight\1\0\0&additional_vim_regex_highlighting\1\2\0\0\borg\1\0\1\venable\2\28nvim-treesitter.configs\21setup_ts_grammar\nsetup\forgmode\frequire\0", "config", "orgmode")
-time([[Config for orgmode]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
